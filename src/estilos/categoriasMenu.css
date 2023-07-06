@@ -1,0 +1,19 @@
+.categoriaMenu{
+    background-color: #C0B195;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+}
+
+.categoriaMenu button{
+    width: 100%;
+    background-color: #1C312A;
+    color: #E1D9BF;
+    margin: 1rem;
+}

@@ -1,0 +1,12 @@
+#root {
+  background-color: #E1D9BF;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0px auto auto auto;
+  padding: 1rem;
+}
+

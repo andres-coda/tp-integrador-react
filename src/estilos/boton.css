@@ -1,0 +1,120 @@
+button {
+    background-color: #1C312A;
+    color: rgb(253, 226, 186);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    box-shadow: 2px 2px 4px black;
+    padding: 0.6rem 1.2rem;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border: 2px solid #A84E3E;
+    color: rgb(220, 231, 218);
+  }
+  button:focus,
+  button:focus-visible {
+    background-color: #70875D;
+    border: 2px solid black;
+    color: black;
+    box-shadow: none;
+  }
+
+  button:active{
+    box-shadow: none;
+    border: 2px solid black;
+    color: black;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color:#1C312A;
+    }
+  }
+
+.btn{
+    position: relative;
+    padding: 0.5rem 2rem;
+    margin: auto 1rem;  
+}
+
+@media (max-width:300px ){
+    .btn, .carritoBoton {
+    font-size: 0.7em;
+    padding: 0.1rem 1rem;
+    margin: 0rem 0.2rem;
+    }
+}
+
+@media (min-width: 300px){
+    .btn,.carritoBoton {
+        font-size: 0.8em;
+    padding: 0.2rem 1.1rem;
+    margin: 0rem 0.3rem;
+    }
+}
+
+@media (min-width: 500px){
+    .btn, .carritoBoton {
+        font-size: 0.9em;
+    padding: 0.3rem 1.5rem;
+    margin: 0rem 0.6rem;
+    }
+}
+
+@media (min-width: 800px){
+    .btn, .carritoBoton {
+        font-size: 1em;
+    padding: 0.4rem 2rem;
+    margin: 0rem 1rem;
+    }
+}
+@media (min-width: 1100px){
+    .btn, .carritoBoton {
+        font-size: 1em;
+    padding: 0.5rem 2rem;
+    margin: 0rem 3rem;
+    }
+}
+
+
+.carritoBoton{
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    z-index: 9999;
+    float: inline-start;
+    background-color: #A84E3E;
+    color:#E1D9BF;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px black;
+    padding: 0.2rem;
+    margin: 0px;
+}
+
+.cerrar{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 9999;
+    float: inline-start;
+    background-color: #A84E3E;
+    color:#E1D9BF;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px black;
+    padding: 0.2rem;
+    margin: 0px;
+  }
+  

@@ -1,0 +1,37 @@
+.carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #C0B195;
+    color: black;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+}
+
+.carrito table {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 1rem;
+}
+.carrito td, .carrito th{
+    border: 1px solid black;
+}
+
+.carrito td, .carrito tr, .carrito th{
+    margin: 0px;
+    padding: 0rem 0.8rem;
+    text-align: center;
+}
+.carrito h2, .carrito p{
+    font-size: 0.9em;
+    font-style:normal;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 2px;
+}
+
+

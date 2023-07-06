@@ -1,0 +1,10 @@
+.pantalla{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-height: 600px;
+    overflow: auto;
+    margin: 1rem 0rem;
+}
