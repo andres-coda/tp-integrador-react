@@ -7,14 +7,12 @@ import '../estilos/boton.css'
 function Boton( { btn } ){
     const { setIdElemento, idElemento, setCategoriaActual } = useContext(idElementoContexto);
     const { setSubtitulo } = useContext(subtituloContexto);
-    const { carrito, setCarrito, total, setTotal, cantidadCarrito, setCantidad, setCantidadBotonesCarrito, cantidadBtnActual, setCantidadBtnActual } = useContext(carritoContexto);
+    const { carrito, setCarrito, total, setTotal, cantidadCarrito, setCantidad, setCantidadBotonesCarrito, cantidadBotonesCarrito } = useContext(carritoContexto);
     const { setPantalla } = useContext(pantallaContexto);
-    let nuevaCantidad=cantidadCarrito;
     const btnClick= (e) => {
         let cantidad=0;
         let nuevoCarrito=[];
         const btn = Number(e.target.id);
-        console.log(nuevaCantidad);
         switch (btn){
             case 0:
                 setSubtitulo("INICIO");
@@ -27,6 +25,10 @@ function Boton( { btn } ){
             break;
             case 2:
                 setSubtitulo("CARRITO");
+                carrito.map((dato)=>{
+                    setTotal(Number(dato.cantidad)*Number(dato.price))
+                })
+                
                 setPantalla(2);
             break;
             case 3:
@@ -44,16 +46,8 @@ function Boton( { btn } ){
                 setIdElemento({});
             break;
             case 5:
-            /*    if (carrito.length>0){
-                    carrito.map((dato)=>{
-                        if (dato.id===idElemento.id){
-                            cantidad=dato.cantidad;
-                        }
-                    });
-                } 
-                setCantidadBtnActual(cantidadBtnActual+1);
-                setCantidadBotonesCarrito(cantidad+cantidadBtnActual);*/
-                if (carrito.length>0){
+                setCantidadBotonesCarrito(cantidadBotonesCarrito+1);
+         /*       if (carrito.length>0){
                     nuevoCarrito=carrito.map((dato)=>{
                         if (dato.id===idElemento.id){
                             dato.cantidad+=1;
@@ -75,10 +69,16 @@ function Boton( { btn } ){
                     setTotal(total+Number(idElemento.price));
                     setCarrito([{...idElemento, "cantidad": 1 }]);
                     setCantidadBotonesCarrito(1);
-                }
+                }*/
             break;
             case 6:
-                nuevoCarrito = carrito.filter((dato) => {
+                if (cantidadBotonesCarrito<=0){
+                    setCantidadBotonesCarrito(0);
+                } else {
+                    setCantidadBotonesCarrito(cantidadBotonesCarrito-1);
+                }
+                
+                /*nuevoCarrito = carrito.filter((dato) => {
                     if (dato.id === idElemento.id) {
                       dato.cantidad -= 1;
                       if (dato.cantidad>=0){
@@ -95,10 +95,26 @@ function Boton( { btn } ){
                   } else { 
                     setCantidad(nuevaCantidad-=1);
                   }
-                  setCarrito(nuevoCarrito);
+                  setCarrito(nuevoCarrito);*/
 
             break;
             case 7:
+                if (carrito.length>0){
+                        nuevoCarrito = carrito.filter((dato) => {
+                        setCantidad(cantidadCarrito+cantidadBotonesCarrito);
+                        if (dato.id === idElemento.id) {
+                          cantidad += cantidadBotonesCarrito;
+                          dato.cantidad = Number(cantidadBotonesCarrito);
+                          return dato.cantidad > 0;
+                        }
+                        return true;
+                      });
+                } else setCantidad(cantidadCarrito+cantidadBotonesCarrito);
+                if (cantidad<=0){
+                    let nuevo = {...idElemento, "cantidad": cantidadBotonesCarrito };
+                    nuevoCarrito.push(nuevo);                  
+                }
+                setCarrito(nuevoCarrito);
                 setIdElemento({});
             break;
             default:

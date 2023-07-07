@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { idElementoContexto } from "../contexto/ContextoIdElemento";
 import { botonesContexto } from "../contexto/ContextoBotones";
 import { carritoContexto } from "../contexto/ContextoCarrito";
-import Subtitulo from "./Subtitulo";
 import TituloProducto from "./TituloProducto";
 import ImgProcucto from "./ImgProducto";
 import PrecioProducto from "./PrecioProducto";
@@ -15,7 +14,7 @@ import '../estilos/productoDetalles.css'
 function ProductoDetalles(){
     const { idElemento} = useContext(idElementoContexto);
     const { botones } = useContext(botonesContexto);
-    const { carrito, verificacion, cantidadBotonesCarrito } = useContext(carritoContexto);
+    const { cantidadBotonesCarrito } = useContext(carritoContexto);
 
     return (
         <>

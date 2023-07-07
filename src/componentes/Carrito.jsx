@@ -9,30 +9,22 @@ import '../estilos/carrito.css'
 import Boton from "./Boton";
 
 function Carrito(){
-    const { carrito, total, setVerificacion } = useContext(carritoContexto);
+    const { carrito, total } = useContext(carritoContexto);
     const { botones } = useContext(botonesContexto);
-    const { idElemento, setIdElemento, datos } = useContext(idElementoContexto);
+    const { setIdElemento, datos } = useContext(idElementoContexto);
     
     const clickTabla = (e) =>{
         let btn = e.currentTarget.id;
         console.log(e.currentTarget.id);
         console.log(datos[btn-1]);
         setIdElemento(datos[btn-1]);
-        setVerificacion(false);
-        if (carrito.length>0){
-            carrito.map((dato)=> {
-                if (dato.id===datos[btn-1].id){
-                    setVerificacion(true);
-                }
-            });
-        }
     }
     return (
         <>
         <div className="carrito">
             <table>
                 <thead>
-                    <tr>
+                    <tr className="carritoComun">
                         <th>
                             <p>Cantidad</p>
                         </th>
@@ -58,7 +50,7 @@ function Carrito(){
                             </td>
                         </tr>
                     ))}
-                    <tr>
+                    <tr className="carritoComun">
                         <td colSpan="5">
                             <h3>TOTAL: $ { total.toFixed(2) }</h3>
                         </td>

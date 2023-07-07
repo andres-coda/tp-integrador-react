@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { idElementoContexto } from "../contexto/ContextoIdElemento";
 import Producto from "./Producto";
 import CategoriasMenu from "./CategoriasMenu";
@@ -8,7 +8,7 @@ import { pantallaContexto } from "../contexto/ContextoPantalla";
 import Carrito from "./Carrito";
 
 function Pantalla(){
-    const { datos, setIdElemento, categoriaActual } = useContext(idElementoContexto);
+    const { datos, categoriaActual } = useContext(idElementoContexto);
     const { pantalla } = useContext(pantallaContexto);
     return (
         <div className="pantalla">

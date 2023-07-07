@@ -4,7 +4,7 @@ import Boton from "./Boton";
 
 
 function Navegador(){
-    const { botones, setBotones } = useContext(botonesContexto);
+    const { botones } = useContext(botonesContexto);
 
     return(
         <nav>
